@@ -36,20 +36,22 @@ If you have any questions, you can find contact infomation on the GitHub profile
 Ben Townsend, Ryan Hatfield, Stephen Flores and Bradlie Wall
 
 ## Author
-**GitHub Username:** rbt00001
-**GitHub Profile:** https://github.com/rbt00001
 
+* ### Ben Townsend:
+  * **GitHub Username:** rbt00001
+  **GitHub Profile:** https://github.com/rbt00001
 
-**GitHub Username:** Ryan-Hatfield
-**GitHub Profile:** https://github.com/Ryan-Hatfield
+* ### Ryan Hatfield:
+  * **GitHub Username:** Ryan-Hatfield
+  **GitHub Profile:** https://github.com/Ryan-Hatfield
 
+* ### Stephen Flores:
+  * **GitHub Username:** sflores813
+  **GitHub Profile:** https://github.com/sflores813
 
-**GitHub Username:** sflores813
-**GitHub Profile:** https://github.com/sflores813
-
-
-**GitHub Username:** Bradlie Wall
-**GitHub Profile:** https://github.com/B-radwll
+* ### Bradlie Wall:
+  * **GitHub Username:** Bradlie Wall
+  **GitHub Profile:** https://github.com/B-radwll
 
 
 ## License
