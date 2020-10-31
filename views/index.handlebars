@@ -6,6 +6,15 @@
 
 <ul>
     {{#sports sports}}
+   
+  <div class="col-sm-2">
+    <strong>{{name}}</strong>
+    <br>
+    {{question}}
+    <br>
+    {{answer}}
+  </div>
+{{/sports}}
 
 </ul>
 
@@ -14,6 +23,14 @@
 
 <ul>
     {{#history history}}
+     <div class="col-sm-2">
+    <strong>{{name}}</strong>
+    <br>
+    {{question}}
+    <br>
+    {{answer}}
+  </div>
+{{/history}}
 
 </ul>
 
@@ -21,6 +38,14 @@
 
 <ul>
     {{#cars cars}}
+    <div class="col-sm-2">
+    <strong>{{name}}</strong>
+    <br>
+    {{question}}
+    <br>
+    {{answer}}
+  </div>
+{{/cars}}
 
 </ul>
 
@@ -28,10 +53,26 @@
 
     <ul>
         {{#geography geography}}
+        <div class="col-sm-2">
+    <strong>{{name}}</strong>
+    <br>
+    {{question}}
+    <br>
+    {{answer}}
+  </div>
+{{/geography}}
     </ul>
 
 <h3>Random!</h3>
 
     <ul>
         {{#random random}}
+        <div class="col-sm-2">
+    <strong>{{name}}</strong>
+    <br>
+    {{question}}
+    <br>
+    {{answer}}
+  </div>
+{{/random}}
     </ul>
