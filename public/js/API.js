@@ -14,7 +14,8 @@ let availableQuesions = [];
 
 let questions = [];
 //API call for Sports category
-fetch("https://opentdb.com/api.php?amount=5&category=21&type=multiple")
+axios
+  .get("https://opentdb.com/api.php?amount=5&category=21&type=multiple")
   .then(res => {
     return res.json();
   })
@@ -40,7 +41,8 @@ fetch("https://opentdb.com/api.php?amount=5&category=21&type=multiple")
     });
   });
 //API call for History category
-fetch("https://opentdb.com/api.php?amount=5&category=23&type=multiple")
+axios
+  .get("https://opentdb.com/api.php?amount=5&category=23&type=multiple")
   .then(res => {
     return res.json();
   })
@@ -66,7 +68,8 @@ fetch("https://opentdb.com/api.php?amount=5&category=23&type=multiple")
     });
   });
 //API call for Cars category
-fetch("https://opentdb.com/api.php?amount=5&category=28&type=multiple")
+axios
+  .get("https://opentdb.com/api.php?amount=5&category=28&type=multiple")
   .then(res => {
     return res.json();
   })
@@ -92,7 +95,8 @@ fetch("https://opentdb.com/api.php?amount=5&category=28&type=multiple")
     });
   });
 //API call for Geography category
-fetch("https://opentdb.com/api.php?amount=5&category=22&type=multiple")
+axios
+  .get("https://opentdb.com/api.php?amount=5&category=22&type=multiple")
   .then(res => {
     return res.json();
   })
@@ -118,7 +122,8 @@ fetch("https://opentdb.com/api.php?amount=5&category=22&type=multiple")
     });
   });
 //API call for Random category
-fetch("https://opentdb.com/api.php?amount=5&type=multiple")
+axios
+  .get("https://opentdb.com/api.php?amount=5&type=multiple")
   .then(res => {
     return res.json();
   })
