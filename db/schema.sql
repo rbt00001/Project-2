@@ -1,5 +1,4 @@
-  
--- Creates the "quizard_db" database --
+DROP DATABASE IF EXISTS quizard_db;
 CREATE DATABASE quizard_db;
 
 USE quizard_db;

@@ -1,0 +1,556 @@
+<!--https://www.youtube.com/watch?v=Z1fMCYW3wYQ-->
+<html>
+ <head>
+  <title>
+    Jeopardy!
+  </title>
+  <meta charset="utf-8">
+  <meta name="keywords" content="Jeopardy, Coach Simpson, coachsimpson, miclaymon, gamernes1313">
+  <meta name="description" content="Written in collaboration wit gamernes9 for our high school history teacher. Based on the game Jeopardy!. (v.0.8)">
+  <meta name="author" content="miclaymon, gamernes1313">
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+ </head>
+
+ <!--<div id="fkbx-spch" tabindex="0" aria-label="Search by voice" style="display: block;"></div>-->
+ 
+ <body>
+  
+  <section id="1"></section>
+  <!-- Pre-Game UI -->
+  <div id="UserInterface">
+    <img id="logo_Jeopardy" src="http://cnemacentre.com/wp-content/uploads/images/show-images/jeopardy-logo.jpg">
+   <section id="SetupSection">
+   <section id="2"></section>
+    <p id="subheading">
+      Username:
+    </p>
+    <input tabindex="0" aria-label="This is a required  field" id="username" style="padding-left:2px" type="text" name="username" placeholder="Username">
+    <br />
+    <br />
+    <br />
+    <p id="subheading">
+      Game Type:
+    </p>
+    <input id="gameType" type="radio" name="gameType" value="Questions">
+    <span class="gameType-TXT" id="gameType-TXT1" style="font-family: -apple-system , 'Raleway', 'Arial', sans-serif">Questions First</span>
+    <br />
+    <input id="gameType" type="radio" name="gameType" value="Answers">
+    <span class="gameType-TXT" id="gameType-TXT2" style="font-family: -apple-system , 'Raleway', 'Arial', sans-serif">Answers First</span>
+    <br />
+    <br />
+    <br />
+    <section class="Category_1-Setup">
+     <p id="subheading">
+      Column 1, Category:
+     </p>
+     <textarea rows=2 cols=6 class="category" id="category_1-setup" placeholder="Category 1"></textarea>
+     <br />
+     <br />
+     <br />
+    </section>
+    <section class="Cell_1A-Setup">
+      <p id="subheading">
+        Column 1, for $100:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_1A-setup-question" placeholder="Question 1"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1A-setup-answer" placeholder="Answer 1"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_1B-Setup">
+      <p id="subheading">
+        Column 1, for $200:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_1B-setup-question" placeholder="Question 2"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1B-setup-answer" placeholder="Answer 2"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_1C-Setup">
+      <p id="subheading">
+        Column 1, for $300:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_1C-setup-question" placeholder="Question 3"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1C-setup-answer" placeholder="Answer 3"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_1D-Setup">
+      <p id="subheading">
+        Column 1, for $400:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_1D-setup-question" placeholder="Question 4"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1D-setup-answer" placeholder="Answer 4"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_1E-Setup">
+      <p id="subheading">
+        Column 1, for $500:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_1E-setup-question" placeholder="Question 5"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1E-setup-answer" placeholder="Answer 5"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Category_2-Setup">
+     <p id="subheading">
+      Column 2, Category:
+     </p>
+     <textarea rows=2 cols=6 class="category" id="category_2-setup" placeholder="Category 2"></textarea>
+     <br />
+     <br />
+     <br />
+    </section>
+    <section class="Cell_2A-Setup">
+      <p id="subheading">
+        Column 2, for $100:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_2A-setup-question" placeholder="Question 6"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1A-setup-answer" placeholder="Answer 6"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_2B-Setup">
+      <p id="subheading">
+        Column 2, for $200:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_2B-setup-question" placeholder="Question 7"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1B-setup-answer" placeholder="Answer 7"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_2C-Setup">
+      <p id="subheading">
+        Column 2, for $300:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_2C-setup-question" placeholder="Question 8"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1C-setup-answer" placeholder="Answer 8"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_2D-Setup">
+      <p id="subheading">
+        Column 2, for $400:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_2D-setup-question" placeholder="Question 9"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1D-setup-answer" placeholder="Answer 9"></textarea>
+    </section>
+    <br />
+    <br />
+    <br />
+    <section class="Cell_2E-Setup">
+      <p id="subheading">
+        Column 2, for $500:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_2E-setup-question" placeholder="Question 10"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_2E-setup-answer" placeholder="Answer 10"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Category_3-Setup">
+     <p id="subheading">
+      Column 3, Category:
+     </p>
+     <textarea rows=2 cols=6 class="category" id="category_3-setup" placeholder="Category 3"></textarea>
+     <br />
+     <br />
+     <br />
+    </section>
+    <section class="Cell_3A-Setup">
+      <p id="subheading">
+        Column 3, for $100:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_3A-setup-question" placeholder="Question 11"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1A-setup-answer" placeholder="Answer 11"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_3B-Setup">
+      <p id="subheading">
+        Column 3, for $200:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_3B-setup-question" placeholder="Question 12"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1B-setup-answer" placeholder="Answer 12"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_3C-Setup">
+      <p id="subheading">
+        Column 3, for $300:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_3C-setup-question" placeholder="Question 13"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1C-setup-answer" placeholder="Answer 13"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_3D-Setup">
+      <p id="subheading">
+        Column 3, for $400:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_3D-setup-question" placeholder="Question 14"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1D-setup-answer" placeholder="Answer 14"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_3E-Setup">
+      <p id="subheading">
+        Column 3, for $500:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_3E-setup-question" placeholder="Question 15"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1E-setup-answer" placeholder="Answer 15"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Category_4-Setup">
+     <p id="subheading">
+      Column 4, Category:
+     </p>
+     <textarea rows=2 cols=6 class="category" id="category_4-setup" placeholder="Category 4"></textarea>
+     <br />
+     <br />
+     <br />
+    </section>
+    <section class="Cell_4A-Setup">
+      <p id="subheading">
+        Column 4, for $100:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_4A-setup-question" placeholder="Question 16"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1A-setup-answer" placeholder="Answer 16"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_4B-Setup">
+      <p id="subheading">
+        Column 4, for $200:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_4B-setup-question" placeholder="Question 17"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1B-setup-answer" placeholder="Answer 17"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_4C-Setup">
+      <p id="subheading">
+        Column 4, for $300:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_4C-setup-question" placeholder="Question 18"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1C-setup-answer" placeholder="Answer 18"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_4D-Setup">
+      <p id="subheading">
+        Column 4, for $400:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_4D-setup-question" placeholder="Question 19"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1D-setup-answer" placeholder="Answer 19"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_4E-Setup">
+      <p id="subheading">
+        Column 4, for $500:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_4E-setup-question" placeholder="Question 20"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1E-setup-answer" placeholder="Answer 20"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Category_5-Setup">
+     <p id="subheading">
+      Column 5, Category:
+     </p>
+     <textarea rows=2 cols=6 class="category" id="category_5-setup" placeholder="Category 5"></textarea>
+     <br />
+     <br />
+     <br />
+    </section>
+    <section class="Cell_5A-Setup">
+      <p id="subheading">
+        Column 5, for $100:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_5A-setup-question" placeholder="Question 21"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1A-setup-answer" placeholder="Answer 21"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_5B-Setup">
+      <p id="subheading">
+        Column 5, for $200:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_5B-setup-question" placeholder="Question 22"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1B-setup-answer" placeholder="Answer 22"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_5C-Setup">
+      <p id="subheading">
+        Column 5, for $300:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_5C-setup-question" placeholder="Question 23"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1C-setup-answer" placeholder="Answer 23"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_5D-Setup">
+      <p id="subheading">
+        Column 5, for $400:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_5D-setup-question" placeholder="Question 24"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1D-setup-answer" placeholder="Answer 24"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_5E-Setup">
+      <p id="subheading">
+        Column 5, for $500:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_5E-setup-question" placeholder="Question 25"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1E-setup-answer" placeholder="Answer 25"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Category_6-Setup">
+     <p id="subheading">
+      Column 6, Category:
+     </p>
+     <textarea rows=2 cols=6 class="category" id="category_6-setup" placeholder="Category 6"></textarea>
+     <br />
+     <br />
+     <br />
+    </section>
+    <section class="Cell_6A-Setup">
+      <p id="subheading">
+        Column 6, for $100:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_6A-setup-question" placeholder="Question 26"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1A-setup-answer" placeholder="Answer 26"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_6B-Setup">
+      <p id="subheading">
+        Column 6, for $200:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_6B-setup-question" placeholder="Question 27"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1B-setup-answer" placeholder="Answer 27"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_6C-Setup">
+      <p id="subheading">
+        Column 6, for $300:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_6C-setup-question" placeholder="Question 28"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1C-setup-answer" placeholder="Answer 28"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_6D-Setup">
+      <p id="subheading">
+        Column 6, for $400:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_6D-setup-question" placeholder="Question 29"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1D-setup-answer" placeholder="Answer 29"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+    <section class="Cell_6E-Setup">
+      <p id="subheading">
+        Column 6, for $500:
+      </p>
+      <textarea rows=3 cols=12 class="question" id="cell_6E-setup-question" placeholder="Question 30"></textarea>
+      <textarea rows=3 cols=12 class="answer" id="cell_1E-setup-answer" placeholder="Answer 30"></textarea>
+      <br />
+      <br />
+      <br />
+    </section>
+     <p id="subheading">
+      Daily Double:
+     </p>
+     <input class="allDailyDouble" id="allowDailyDouble" type="radio" name="DailyDouble" value="DailyDouble-Yes">
+     <span class="allDailyDouble" id="DailyDouble-TXT1" style="font-family: -apple-system , 'Raleway', 'Arial', sans-serif">Yes</span>
+     <br />
+     <input class="allDailyDouble" id="allowDailyDouble" type="radio" name="DailyDouble" value="DailyDoubleNo">
+     <span class="allDailyDouble" id="DailyDouble-TXT2" style="font-family: -apple-system , 'Raleway', 'Arial', sans-serif">No</span>
+     <br />
+     <br />
+     <br />
+    <div id="submit">
+      <button id="submit-btn" type="button">
+        Submit
+      </button>
+    </div>
+   </section>
+  </div>
+  <!-- Main Game -->
+  <div id="toolbar">
+   <li>&nbsp;RED TEAM&nbsp;<span id="redScore">--</span>&nbsp;</li>
+   <li>&nbsp;BLUE TEAM&nbsp;<span id="blueScore">--</span>&nbsp;</li>
+   <li>&nbsp;NONE&nbsp;</li>
+   <li>&nbsp;CORRECT&nbsp;</li>
+   <li>&nbsp;INCORRECT&nbsp;</li>
+   <span class="hoverInfo" id="?info" onclick="toggleVisibility1(document.getElementById('infoWindow'))" title="Info" tabindex="0" aria-expanded="false" saprocessedanchor="true">&nbsp;&nbsp;i&nbsp;&nbsp;</span>
+   <span class="hoverSettings" title="Options" tabindex="0" aria-expanded="false" saprocessedanchor="true" id="UI">&nbsp;&#x2699;&nbsp;</span>
+   <span class="hoverExit" title="End" tabindex="0" aria-expanded="false" saprocessedanchor="true">&nbsp;&nbsp;&#x1f6aa;&nbsp;&nbsp;</span>
+   <span class="hoverClose" title="Close" tabindex="0" aria-expanded="false" saprocessedanchor="true">&nbsp;&#x2715;&nbsp;</span>
+   &nbsp;
+  </div>
+  <div id="board" class="board">
+    <table>
+      <thead>
+        <th id="category_1-setup">
+          [CATEGORY]
+        </th>
+        <th id="category_2">
+          [CATEGORY]
+        </th>
+        <th id="category_3">
+          [CATEGORY]
+        </th>
+        <th id="category_4">
+          [CATEGORY]
+        </th>
+        <th id="category_5">
+          [CATEGORY]
+        </th>
+        <th id="category_6">
+          [CATEGORY]
+        </th>
+      </thead>
+      <tr id="row_1">
+        <td id="cell_1A">
+          $200
+        </td>
+        <td id="cell_2A">
+          $200
+        </td>
+        <td id="cell_3A">
+          $200
+        </td>
+        <td id="cell_4A">
+          $200
+        </td>
+        <td id="cell_5A">
+          $200
+        </td>
+        <td id="cell_6A">
+          $200
+        </td>
+      </tr>
+      <tr id="row_2">
+        <td id="cell_1B">
+          $400
+        </td>
+        <td id="cell_2B">
+          $400
+        </td>
+        <td id="cell_3B">
+          $400
+        </td>
+        <td id="cell_4B">
+          $400
+        </td>
+        <td id="cell_5B">
+          $400
+        </td>
+        <td id="cell_6B">
+          $400
+        </td>
+      </tr>
+      <tr id="row_3">
+        <td id="cell_1C">
+          $600
+        </td>
+        <td id="cell_2C">
+          $600
+        </td>
+        <td id="cell_3C">
+          $600
+        </td>
+        <td id="cell_4C">
+          $600
+        </td>
+        <td id="cell_5C">
+          $600
+        </td>
+        <td id="cell_6C">
+          $600
+        </td>
+      </tr>
+      <tr id="row_4">
+        <td id="cell_1D">
+          $800
+        </td>
+        <td id="cell_2D">
+          $800
+        </td>
+        <td id="cell_3D">
+          $800
+        </td>
+        <td id="cell_4D">
+          $800
+        </td>
+        <td id="cell_5D">
+          $800
+        </td>
+        <td id="cell_6D">
+          $800
+        </td>
+      </tr>
+      <tr id="row_5">
+        <td id="cell_1E">
+          $1000
+        </td>
+        <td id="cell_2E">
+          $1000
+        </td>
+        <td id="cell_3E">
+          $1000
+        </td>
+        <td id="cell_4E">
+          $1000
+        </td>
+        <td id="cell_5E">
+          $1000
+        </td>
+        <td id="cell_6E">
+          $1000
+        </td>
+      </tr>
+    </table>
+   </div>
+  <div id="infoWindow">
+   <p id="infoClose" onclick="toggleVisibility2(document.getElementById('infoWindow'))">&nbsp;&#x2715;&nbsp;</p>
+   <p id="instructions">Single-Click box for first set, Double-Click box for second set. Version 2.0 will have single click for each one, but will still swap between question and answer.</p>
+  </div>
+ </body>
+</html>
