@@ -5,7 +5,7 @@
 <h3>Sports Trivia</h3>
 
 <ul>
-    {{#sports sports}}
+    {{#each sports}}
    
   <div class="col-sm-2">
     <strong>{{name}}</strong>
@@ -14,7 +14,7 @@
     <br>
     {{answer}}
   </div>
-{{/sports}}
+{{/each}}
 
 </ul>
 

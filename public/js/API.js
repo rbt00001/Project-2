@@ -1,14 +1,14 @@
-const question = document.getElementById('question');
-const choices = Array.from(document.getElementsByClassName('choice-text'));
-const progressText = document.getElementById('progressText');
-const scoreText = document.getElementById('score');
-const progressBarFull = document.getElementById('progressBarFull');
+const question = document.getElementById("question");
+const choices = Array.from(document.getElementsByClassName("choice-text"));
+const progressText = document.getElementById("progressText");
+const scoreText = document.getElementById("score");
+const progressBarFull = document.getElementById("progressBarFull");
 const scoreDiv = document.getElementById("hud-item");
-let currentQuestion = {};
-let acceptingAnswers = false;
-let score = 0;
-let questionCounter = 0;
-let availableQuesions = [];
+const currentQuestion = {};
+const acceptingAnswers = false;
+const score = 0;
+const questionCounter = 0;
+const availableQuesions = [];
 
 let questions = [];
 //sports easy 
@@ -23,6 +23,7 @@ fetch(
             const formattedQuestion = {
                 question: loadedQuestion.question,
             };
+
 
             const answerChoices = [...loadedQuestion.incorrect_answers];
             formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
@@ -52,21 +53,23 @@ fetch(
                 question: loadedQuestion.question,
             };
 
-            const answerChoices = [...loadedQuestion.incorrect_answers];
-            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-            answerChoices.splice(
-                formattedQuestion.answer - 1,
-                0,
-                loadedQuestion.correct_answer
-            );
 
-            answerChoices.forEach((choice, index) => {
-                formattedQuestion['choice' + (index + 1)] = choice;
-            });
 
-            return formattedQuestion;
-        });
+      const answerChoices = [...loadedQuestion.incorrect_answers];
+      formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+      answerChoices.splice(
+        formattedQuestion.answer - 1,
+        0,
+        loadedQuestion.correct_answer
+      );
+
+      answerChoices.forEach((choice, index) => {
+        formattedQuestion["choice" + (index + 1)] = choice;
+      });
+
+      return formattedQuestion;
     });
+
 //sports hard 
 fetch(
     'https://opentdb.com/api.php?amount=5&category=21&difficulty=hard&type=multiple'
@@ -431,3 +434,6 @@ fetch(
                                             return formattedQuestion;
                                         });
                                     });
+
+
+

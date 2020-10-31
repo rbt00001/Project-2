@@ -24,3 +24,4 @@ answer varchar(100) NOT NULL,
 questions_id INT(10) NOT NULL,
 FOREIGN KEY (questions_id) REFERENCES answers(id)
 );
+
