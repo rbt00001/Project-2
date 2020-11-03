@@ -5,93 +5,95 @@ module.exports = function(app) {
     // ToDo : serve up  login page
   });
 
-  app.get("/", isAuthenticated, (req, res) => {
+  app.get("/", (req, res) => {
     res.render("index", {});
   });
 
-  app.get("/trivia", isAuthenticated, (req, res) => {
+  app.get("/trivia", (req, res) => {
     // ToDo : render trivia home page
     var data = getQuestionData();
-    {
-      columns: [
-        {
-          category: "Sports",
-          questions: [
-            {
-              question: "Question 1",
-              pointValue: 100,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 2",
-              pointValue: 200,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 3",
-              pointValue: 400,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 4",
-              pointValue: 800,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 5",
-              pointValue: 1200,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            }
-          ]
-        },
-        {
-          category: "Cars",
-          questions: [
-            {
-              question: "Question 1",
-              pointValue: 100,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 2",
-              pointValue: 200,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 3",
-              pointValue: 400,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 4",
-              pointValue: 800,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            },
-            {
-              question: "Question 5",
-              pointValue: 1600,
-              answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-              correctAnsIndx: 2
-            }
-          ]
-        }
-      ];
-    }
-
+    /*
+*/
     res.render("trivia", data);
   });
 };
 
-function getQuestionData() {}
+function getQuestionData() {
+  return {
+    columns: [
+      {
+        category: "Sports",
+        questions: [
+          {
+            question: "Question 1",
+            pointValue: 100,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 2",
+            pointValue: 200,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 3",
+            pointValue: 400,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 4",
+            pointValue: 800,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 5",
+            pointValue: 1200,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          }
+        ]
+      },
+      {
+        category: "Cars",
+        questions: [
+          {
+            question: "Question 1",
+            pointValue: 100,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 2",
+            pointValue: 200,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 3",
+            pointValue: 400,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 4",
+            pointValue: 800,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          },
+          {
+            question: "Question 5",
+            pointValue: 1600,
+            answers: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
+            correctAnsIndx: 2
+          }
+        ]
+      }
+    ]
+  };
+}
 /*
         axios.get(
             'https://opentdb.com/api.php?amount=5&category=21&type=multiple'
@@ -122,8 +124,8 @@ function getQuestionData() {}
               });
 */
 //----API Calls FOR TRIVIA GAME, AXIOS.GET NEEDS TO BE PUT INTO THEIR PLACE.
-/* eslint-disable prettier/prettier */
-/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier
+ eslint-disable no-unused-vars 
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById("progressText");
@@ -500,3 +502,4 @@ axios
       return formattedQuestion;
     });
   });
+  */
