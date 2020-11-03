@@ -1,4 +1,4 @@
-// var axios = require("axios");
+var axios = require("axios");
 
 module.exports = function(app) {
   app.get("/login", (req, res) => {
@@ -9,16 +9,27 @@ module.exports = function(app) {
     res.render("index", {});
   });
 
-  app.get("/trivia", (req, res) => {
+  app.get("/trivia", async (req, res) => {
     // ToDo : render trivia home page
-    var data = getQuestionData();
+    var data = await getQuestionData();
     /*
 */
     res.render("trivia", data);
   });
 };
 
-function getQuestionData() {
+async function getQuestionData() {
+  var categories = [{name: "Sports", apiId: 21}, {}, {}];
+  var model = { columns: []};
+  categories.forEach(cat => {
+    var catObj = {category: cat.name, questions: []};
+    for(var i = 0; i < 3; i++) {
+      if (i === 0) {
+        var questions = await getQuestions(2, "easy", cat.apiId);
+      }
+    }
+    model.columns.push(catObj);
+  });
   return {
     columns: [
       {
@@ -93,6 +104,14 @@ function getQuestionData() {
       }
     ]
   };
+}
+
+async function getQuestions(howMany, difficulty, categoryId) {
+  var url = `https://opentdb.com/api.php?amount=${howMany}&difficulty=${difficulty}&type=multiple`;
+  if (categoryId > 0) {
+    url = url + `&category=${categoryId}`;
+  }
+  return await axios.get(url);
 }
 /*
         axios.get(
