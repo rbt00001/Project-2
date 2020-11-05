@@ -11,25 +11,14 @@ module.exports = function(app) {
 
   app.get("/trivia", async (req, res) => {
     // ToDo : render trivia home page
-    var data = await getQuestionData();
+    var data =  getQuestionData();
     /*
 */
     res.render("trivia", data);
   });
 };
 
-async function getQuestionData() {
-  var categories = [{name: "Sports", apiId: 21}, {}, {}];
-  var model = { columns: []};
-  categories.forEach(cat => {
-    var catObj = {category: cat.name, questions: []};
-    for(var i = 0; i < 3; i++) {
-      if (i === 0) {
-        var questions = await getQuestions(2, "easy", cat.apiId);
-      }
-    }
-    model.columns.push(catObj);
-  });
+ function getQuestionData() {
   return {
     columns: [
       {
@@ -106,13 +95,6 @@ async function getQuestionData() {
   };
 }
 
-async function getQuestions(howMany, difficulty, categoryId) {
-  var url = `https://opentdb.com/api.php?amount=${howMany}&difficulty=${difficulty}&type=multiple`;
-  if (categoryId > 0) {
-    url = url + `&category=${categoryId}`;
-  }
-  return await axios.get(url);
-}
 /*
         axios.get(
             'https://opentdb.com/api.php?amount=5&category=21&type=multiple'
@@ -169,7 +151,8 @@ axios
       const formattedQuestion = {
         question: loadedQuestion.question
       };
-      const answerChoices = [...loadedQuestion.incorrect_answers];
+      
+       answerChoices = [...loadedQuestion.incorrect_answers];
       formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
       answerChoices.splice(
         formattedQuestion.answer - 1,
