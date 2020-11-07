@@ -1,10 +1,19 @@
+<div class="container">
+<div class = "row"> 
 {{#each columns}}
-    <div class="categoryHeader">{{category}}</div>
+<div class ="col-2">
+    <div class="container">
+    <div class="row">
+    <div class="categoryHeader col-12" >{{category}}</div>
+    </div>
     {{#each questions}}
-        <div class="question">{{pointValue}}</div>
-        <div class="modal hidden">
-            {{question}}
-        </div>
+    <div class="row">
+        <button id="questionBtn"class="question col-12">{{pointValue}}</button>
+        
+    </div>
     {{/each}}
-
+    </div>
+</div>
 {{/each}}
+</div>
+</div>
