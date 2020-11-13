@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-empty */
 var axios = require("axios");
 
 module.exports = function(app) {
@@ -11,10 +13,26 @@ module.exports = function(app) {
 
   app.get("/trivia", async (req, res) => {
     // ToDo : render trivia home page
-    var data = getQuestionData();
-    /*
-*/
-    res.render("trivia", data);
+    //var data = getQuestionData();
+
+    //const getQuestions = async () => {
+    const url = "https://opentdb.com/api.php?amount=5&difficulty=easy&type=multiple";
+    const { data } = await axios.get(url);
+    // eslint-disable-next-line prettier/prettier
+    const newData =  () => {
+      let result = []
+      for (let i = 0; i < data.results.length; i++) {
+          let newIndex = {
+              ...data.results[i],
+              answers: [data.results[i].correct_answer, ...data.results[i].incorrect_answers]
+          }
+          result.push(newIndex)
+      }
+      return result
+  }
+  newData().then(response  => res.render("trivia", {result: response}))
+
+    //res.render("trivia", { questions: data.results });
   });
 };
  function getQuestionData() {
