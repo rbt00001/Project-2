@@ -1,4 +1,4 @@
-/*
+
 async function getQuestionData() {
   var categories = [{name: "Sports", apiId: 21}, {}, {}];
   var model = { columns: []};
@@ -12,7 +12,7 @@ async function getQuestionData() {
     model.columns.push(catObj);
   });
 
-*/
+
 
 /*
 async function getQuestions(howMany, difficulty, categoryId) {
