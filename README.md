@@ -2,7 +2,7 @@
 # Quizard
 
 ## Description
-
+Quizard is a trivia game that is similar to Jeopardy. User will be able to select a level of difficulty from a variety of categories.
 
 ## Table of Contents
 

@@ -1,3 +1,19 @@
+
+async function getQuestionData() {
+  var categories = [{name: "Sports", apiId: 21}, {}, {}];
+  var model = { columns: []};
+  categories.forEach(cat => {
+    var catObj = {category: cat.name, questions: []};
+    for(var i = 0; i < 3; i++) {
+      if (i === 0) {
+        var questions = await getQuestions(2, "easy", cat.apiId);
+      }
+    }
+    model.columns.push(catObj);
+  });
+
+
+
 /*
 async function getQuestions(howMany, difficulty, categoryId) {
   var url = `https://opentdb.com/api.php?amount=${howMany}&difficulty=${difficulty}&type=multiple`;
