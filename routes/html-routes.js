@@ -30,10 +30,10 @@ module.exports = function(app) {
       }
       return result
   }
-  newData().then(response  => res.render("trivia", {result: response}))
 
-    //res.render("trivia", { questions: data.results });
+    res.render("trivia", { questions: newData()});
   });
+  
 };
  function getQuestionData() {
   return {
