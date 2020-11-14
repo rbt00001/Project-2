@@ -1,5 +1,7 @@
 .container{
-  text-align: center
+    background-color: blanchedalmond;
+    color: blue;
+    text-align: center;
    
 };
 body{
@@ -9,20 +11,17 @@ h1{
     color:antiquewhite;
 }
 
-.jumbotron {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+.rules{
+   color:blue;
+   text-align: center;
 }
-
-.rules ul {
-    text-align: center;
+button{
+    background-color: aqua;
+    position: center;
 }
-
-.jumbotron h1 {
-    color: dodgerblue;
+#start{
+    background-color: orangered;
+    margin-left: 49%;
+    margin-right: 49%;
+    
 }
-
-.jumbotron p {
-    color: white;
-}
-
