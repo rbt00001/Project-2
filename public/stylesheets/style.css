@@ -1,6 +1,7 @@
 .container{
     background-color: blanchedalmond;
     color: blue;
+    text-align: center;
    
 };
 body{
@@ -10,3 +11,11 @@ h1{
     color:antiquewhite;
 }
 
+.rules{
+   color:blue;
+   text-align: center;
+}
+button{
+    background-color: aqua;
+    position: center;
+}
