@@ -7,9 +7,25 @@
     <div class="categoryHeader col-12" >{{category}}</div>
     </div> --}}
     {{#each questions}}
+    <div class="container">
     <div class="row">
-        {{question}}
-        {{answers}}
+        <h4 class="col-2">{{category}}</h4>
+    </div>
+    <div class="row">
+        <p>{{question}}</p>
+    </div>
+    <div class="row">
+        <ul> answers:
+            <li>{{answers}}</li>
+        </ul>
+        <form>
+  <div class="form-group">
+    <input type="answer" class="form-control" id="inputAnswer">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    </div>
+    </div>
         {{!-- <button id="questionBtn"class="question col-12">{{pointValue}}</button>
          --}}
     {{!-- </div>
