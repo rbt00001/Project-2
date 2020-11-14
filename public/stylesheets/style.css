@@ -19,3 +19,9 @@ button{
     background-color: aqua;
     position: center;
 }
+#start{
+    background-color: orangered;
+    margin-left: 49%;
+    margin-right: 49%;
+    
+}
